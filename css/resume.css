@@ -1,0 +1,365 @@
+/**
+ *     My personal resume CSS - TOC
+ *   --------------------------------
+ *     2014 @ created by Martin Jirku
+ *     based on Photoshop template from https://www.dropbox.com/s/q2jqwkqb10vjroo/free%20resume.psd?n=312400759
+ *   __________
+ *  |          |
+ *  |   TOC    |
+ *  |__________|
+ * 
+ *  - #Resets....................................Reset basic elements, nothing advanced sofar
+ *  - #Mixin.....................................Usefull mixins
+ *  - #Icons.....................................Different icons
+ *  - #Text......................................Text styling
+ *  - #Header....................................Header part of the page
+ *  - #Content...................................Content part of the page
+ *  - #Infobox...................................All different boxes, such as Contact, exp,...
+ *  - #Footer....................................Footer part of the page
+ * 
+ */
+
+
+/*              *\
+     #Resets
+\*              */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin:    0;
+    padding:   0;
+    border:    0;
+    font-size: 15px;
+    font-family: Myriad, Helvetica, Sans-serif;
+    vertical-align: baseline;
+}
+
+/**
+ * Let's make page as a plain list of paper if it is more than 640px
+ */
+body {
+    max-width: 640px;
+    margin: 0 auto;
+    /**
+     *  I decidet to put my resume on a table 
+     **/
+    background-image: url("../img/wood.png");
+}
+
+/*             *\
+     #Mixins
+\*             */
+
+/**
+ * Idea published by Sebastian Ekström: http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+ */
+.vertical-align {
+    position: relative;
+    top:      50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform:     translateY(-50%);
+    transform:         translateY(-50%);
+}
+
+.vertical-align-parent {
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.box {
+    padding: 10px;
+}
+
+.column--two {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+       -moz-column-count: 2; /* Firefox */
+            column-count: 2;
+    -webkit-column-gap:   30px; /* Chrome, Safari, Opera */
+       -moz-column-gap:   30px; /* Firefox */
+            column-gap:   30px;
+}
+
+.bullets--no-list {
+    list-style-type: none;
+}
+
+.table__cell--emp {
+    font-weight: 600;
+}
+
+table .center {
+    vertical-align: middle;
+}
+
+/*            *\
+     #Icons
+\*            */
+
+.ico-contact {
+    background-image: url('../img/contact.png');
+}
+
+.ico-bullet {
+    background-image: url('../img/bullet.png');
+}
+
+.ico-music-note {
+    background-image: url('../img/music-note.png');
+}
+
+.ico-pencil {
+    background-image: url('../img/pencil.png');
+}
+
+.ico-knowledge {
+    background-image: url('../img/knowledge.png');
+}
+
+.ico-suitcase {
+    background-image: url('../img/suitcase.png');
+}
+
+/*            *\
+     #Text
+\*            */
+
+h1 {
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 0.98em;
+}
+
+b {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+p {
+    font-size: 0.9em;
+}
+
+/*              *\
+     #Header
+\*              */
+
+.header {
+    width:  100%;
+    height: 160px;
+    background-color: #282828;
+    color:            #fff;
+}
+
+    .header__name {
+        /*
+            .header__name should have same height as .header__picture
+         */
+        width:    180px;
+        padding:  0 40px;
+        float:    left;
+        position: relative;
+    }
+
+    .header__name__text--name {
+        /* Name is bigger than job */
+        font-size: 2.2em;
+        /* 
+           parent .header__name contains in vertical-align position: relative
+           so we can you here position: absolute;
+        */
+        position: absolute;
+        top:      0px;
+    }
+
+    .header__name__text--job {
+        font-size: 1.5em;
+        /* 
+           parent .header__name contains in vertical-align position: relative
+           so we can you here position: absolute;
+        */
+        position: absolute;
+        bottom:   0px;
+        font-weight: 100;
+    }
+
+    .header__picture {
+        width:    90px;
+        padding:  0 70px;
+        float:    right;
+        position: relative;
+    }
+
+    .header__picture img {
+        width: 100%;
+        border-radius: 100px;
+        border: #fff 3px solid;
+    }
+
+    .header__child--height {
+        height: 90px;
+    }
+
+/*              *\
+     #Content
+\*              */
+
+.content {
+    background-color: #fff;
+    position: relative;
+}
+
+
+/*              *\
+     #Infobox
+\*              */
+
+/**
+ * Infoboxes are containers for different kinds of information.
+ * Usualy contains Title and Content.
+ *
+ * Icon precedes the title, title is underline by styleee line which ends with dot :-)
+ *
+ * Info box has different decorators, such as border on the left side, or border on the end of the box
+ * 
+ */
+.info__box {
+    margin: 30px;
+    padding: 5px;
+    position: relative;
+}
+
+.info__box--left-border::after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    left: 23px;
+    top: 5px;
+    border-left: #03A9F4 1px solid;
+}
+
+    .info__box__title {
+        text-transform: uppercase;
+        font-size: 1em;
+        position: relative; /* because ::before bottom border line*/
+    }
+
+    .info__box__title::after {
+        content:  "";
+        width:    200px;
+        position: absolute;
+        left:     20px;
+        bottom:   10px;
+        background-image: url('../img/bullet.png');
+        border-bottom: #03A9F4 1px solid;
+    }
+
+    .info__box__title>* {
+        display: inline-block;
+    }
+
+    .info__box__title__icon {
+        width:  40px;
+        height: 40px;
+        vertical-align:      middle;
+        background-color:    #fff;
+        background-position: 5px 3px;
+        background-size:     30px; /* Size needs to be in sync with width and height!*/
+        background-repeat:   no-repeat;
+        border:              #03A9F4 1px solid;
+        border-radius:       40px; /* radius needs to be in sync with width and height!*/
+        position:            relative; /* position and z-index needs to be setted up, so we can hide bottom line under icon */
+        z-index:             1;
+    }
+
+    .info__box__title__bullet {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        right: 0px;
+        bottom: 5px;
+        background-image: url('../img/bullet.png');
+        background-repeat: no-repeat;
+        background-size: 8px;
+    }
+
+    .info__box__content,
+    .info__box__content ul, .info__box__content li, 
+    .info__box__content a {
+        font-size: 0.95em;
+    }
+
+    .info__box__content {
+        margin: 10px 0 10px 45px;
+        font-weight: 100;
+        line-height: 2em;
+        font-size: 0.88em;
+    }
+
+    .info__box__content td {
+        font-size: 0.8em;
+    }
+
+    /**
+     * There is second level of info__box as well. I will handle these cases with
+     * .info__box--second class
+     */
+    .info__box--second {
+        margin: 0px;
+        padding: 0;
+    }
+
+    .info__box--second .info__box__title::after {
+        bottom: 7px;
+    }
+
+    .info__box--second .info__box__title__bullet {
+        bottom: 2px;
+    }
+
+    .info__box--second .info__box__title {
+        margin: 15px 0 0 2px ;
+        padding: 0;
+    }
+
+    .info__box--second .info__box__title h1,
+    .info__box--second .info__box__title h2,
+    .info__box--second .info__box__title h3 {
+        font-size: 0.8em;
+        margin: 0 0 0 8px;
+    }
+
+    .info__box--second .info__box__content {
+
+    }
+
+    .info__box--second .info__box__title__icon {
+        width: 30px;
+        height: 30px;
+        background-size: 20px;
+    }
+
+    .eval-points {
+        width: 120px;
+    }
+
+
+/*              *\
+     #Footer
+\*              */
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.5);
+}
