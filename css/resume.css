@@ -310,6 +310,8 @@ p {
 
     .info__box__content td {
         font-size: 0.8em;
+        line-height: 1em;
+        padding: 0 0 10px 0;
     }
 
     /**
