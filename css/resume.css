@@ -2,6 +2,7 @@
  *     My personal resume CSS - TOC
  *   --------------------------------
  *     2014 @ created by Martin Jirku
+ *     2015 @ edited by Tomas Kramaric
  *     based on Photoshop template from https://www.dropbox.com/s/q2jqwkqb10vjroo/free%20resume.psd?n=312400759
  *   __________
  *  |          |
@@ -19,7 +20,7 @@
  * 
  */
 
-
+@import url("fonts.css");
 /*              *\
      #Resets
 \*              */
@@ -41,7 +42,7 @@ time, mark, audio, video {
     padding:   0;
     border:    0;
     font-size: 15px;
-    font-family:"Sansation Light";
+    font-family: 'SansationLight';
     vertical-align: baseline;
 }
 
@@ -191,7 +192,7 @@ p {
         /*
             .header__name should have same height as .header__picture
          */
-        width:    200px;
+        width:    450px;
         padding:  0 40px;
         float:    left;
         position: relative;
@@ -414,15 +415,4 @@ p {
 
 img.footer_validator_logo {
     vertical-align: middle;
-}
-
-/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
-@font-face {
-    font-family:"Sansation Light";
-    src:url("./../font/Sansation_Light.eot?") format("eot"),
-        url("./../font/Sansation_Light.woff") format("woff"),
-        url("./../font/Sansation_Light.ttf") format("truetype"),
-        url("./../font/Sansation_Light.svg#SansationLight") format("svg");
-    font-weight:normal;
-    font-style:normal;
 }
